@@ -4,5 +4,10 @@
   "description": "Play connect four online",
   "main": "index.js",
   "author": "Scott Williams",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  }
 }
