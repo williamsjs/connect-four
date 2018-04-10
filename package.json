@@ -1,0 +1,8 @@
+{
+  "name": "ConnectFour",
+  "version": "1.0.0",
+  "description": "Play connect four online",
+  "main": "index.js",
+  "author": "Scott Williams",
+  "license": "MIT"
+}
