@@ -8,7 +8,7 @@ const Board = () => {
   return (
     <div className="board-holder">
       <div className="board">
-        {Array(6).fill().map((_, i) => <Row />)}
+        {Array(6).fill().map((_, i) => <Row key={i+1} />)}
       </div>
     </div>
   )

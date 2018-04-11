@@ -7,7 +7,7 @@ import './Row.css';
 const Row = () => {
   return (
     <div className="row">
-      {Array(7).fill().map((_, i) => <Space />)}
+      {Array(7).fill().map((_, i) => <Space key={i+1} />)}
     </div>
   );
 }
