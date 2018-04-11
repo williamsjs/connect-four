@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Board from './Board/Board';
+import Header from './Header/Header';
 
 const App = () => {
   return (
-    "Hello, from Connect Four"
+    <div className="container">
+      <Header />
+      <Board />
+    </div>
   );
 }
 
