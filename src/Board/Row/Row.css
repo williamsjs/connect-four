@@ -1,5 +1,16 @@
 .row {
-  background: #DFC12A;
-  height: 68px;
+  height: 80px;
   width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.row:first-child {
+  padding-top: 20px;
+}
+
+.row:last-child {
+  padding-bottom: 20px;
 }

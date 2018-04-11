@@ -6,8 +6,10 @@ import './Board.css';
 
 const Board = () => {
   return (
-    <div className="board">
-      {Array(8).fill().map((_, i) => <Row />)}
+    <div className="board-holder">
+      <div className="board">
+        {Array(6).fill().map((_, i) => <Row />)}
+      </div>
     </div>
   )
 }

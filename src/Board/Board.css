@@ -1,8 +1,12 @@
-.board {
-  height: 600px;
-  width: 80%;
+.board-holder {
+  height: 640px;
+  width: 85%;
   border-left: 25px solid #0077BE;
   border-right: 25px solid #0077BE;
   border-bottom: none;
   margin: auto;
+}
+
+.board {
+  background: #DFC12A;
 }
