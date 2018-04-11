@@ -1,6 +1,6 @@
 .board-holder {
   height: 640px;
-  width: 85%;
+  width: 65%;
   border-left: 25px solid #0077BE;
   border-right: 25px solid #0077BE;
   border-bottom: none;
@@ -9,4 +9,10 @@
 
 .board {
   background: #DFC12A;
+}
+
+@media screen and (max-width: 767px) {
+  .board-holder {
+    width: 85%;
+  }
 }
