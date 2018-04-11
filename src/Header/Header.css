@@ -2,4 +2,8 @@
   text-align: center;
   width: 300px;
   margin: 15px auto;
+  color: #FFF;
+  font-family: 'Francois One', sans-serif;
+  font-size: 38px;
+  text-shadow: 3px 3px 3px #0077BE;
 }

@@ -1,8 +1,8 @@
 .board {
   height: 600px;
   width: 80%;
-  border-left: 20px solid #0077BE;
-  border-right: 20px solid #0077BE;
+  border-left: 25px solid #0077BE;
+  border-right: 25px solid #0077BE;
   border-bottom: none;
   margin: auto;
 }
