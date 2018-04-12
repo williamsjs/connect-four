@@ -8,7 +8,7 @@ import './Board.css';
 const Board = () => {
 
   const rows = (_, i) => (
-    <Row key={i+1}>
+    <Row key={i+1} >
       {rowOutput(spaces, 7)}
     </Row>
   );
