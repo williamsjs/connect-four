@@ -9,7 +9,7 @@ import './Board.css';
 const Board = () => {
 
   const rows = (_, i) => (
-    <Row key={i+1}>{rowOutput(spaces, 6)}</Row>
+    <Row key={i+1}>{rowOutput(spaces, 7)}</Row>
   );
 
   const spaces = (_, i) => (
@@ -18,17 +18,17 @@ const Board = () => {
 
   const arrowRow = (_, i) => (
     <Arrow key={i+1} />
-  )
+  );
 
-  const rowOutput = (row, num) => {
-    return Array(num).fill().map(row);
-  }
+  const rowOutput = (row, num) => (
+    Array(num).fill().map(row)
+  );
 
   return (
     <div className="board-holder">
-      <Row>{rowOutput(arrowRow, 7)}</Row>
+      {/* <Row>{rowOutput(arrowRow, 7)}</Row> */}
       <div className="board">
-        {rowOutput(rows, 7)}
+        {rowOutput(rows, 6)}
       </div>
     </div>
   )
