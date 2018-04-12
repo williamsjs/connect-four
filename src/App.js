@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Board from './Board/Board';
 import Header from './Header/Header';
+import Container from './Container/Container';
 
 const App = () => {
   return (
-    <div className="container">
+    <div>
       <Header />
-      <Board />
+      <Container />
     </div>
   );
 }

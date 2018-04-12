@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import Space from './Space/Space';
-import Arrow from '../Arrow/Arrow';
-import Row from './Row/Row';
+import Row from '../Shared/Row/Row';
 import './Board.css';
 
 const Board = () => {
 
   const rows = (_, i) => (
-    <Row key={i+1}>{rowOutput(spaces, 7)}</Row>
+    <Row key={i+1}>
+      {rowOutput(spaces, 7)}
+    </Row>
   );
 
   const spaces = (_, i) => (
