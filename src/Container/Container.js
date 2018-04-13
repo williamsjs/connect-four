@@ -9,7 +9,7 @@ import './Container.css';
 const Container = () => {
   return (
     <div className="container">
-      <Row style={{height: '20px'}}>
+      <Row style={{height: '20px', marginBottom: '40px'}}>
         {Array(7).fill().map((_, i) => <Arrow key={i+1} />)}
       </Row>
       <Board />

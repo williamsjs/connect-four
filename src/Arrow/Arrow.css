@@ -2,11 +2,13 @@
   display: inline-block;
   width: 9%;
   margin: 1% 1.6%;
-  /* animation: bounce 2s ease-in-out infinite; */
+  color: #FFF;
+  font-size: 30px;
+  animation: bounce 1.3s ease-in-out infinite;
 }
 
 @keyframes bounce {
-  0% { margin-top: 10px;}
-  50% {margin-top: 200px;}
-  100% { margin-top: 10px; }
+  0% { margin-top: 0px}
+  50% {margin-top: 20px;}
+  100% { margin-top: 0px; }
 }
