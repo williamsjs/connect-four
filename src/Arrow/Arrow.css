@@ -7,6 +7,10 @@
   animation: bounce 1.3s ease-in-out infinite;
 }
 
+.arrow:hover {
+  cursor: pointer;
+}
+
 @keyframes bounce {
   0% { margin-top: 0px}
   50% {margin-top: 20px;}
