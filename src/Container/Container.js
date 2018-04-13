@@ -12,15 +12,15 @@ class Container extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    console.log(e);
+  handleClick(rowIndex) {
+    console.log(rowIndex);
   }
 
   render() {
     return (
       <div className="container">
         <Row style={{height: '20px', marginBottom: '40px'}}>
-          {Array(7).fill().map((_, i) => <Arrow key={i+1} val={i+1} handleClick={this.handleClick} />)}
+          {Array(7).fill().map((_, i) => <Arrow key={i+1} rowIndex={i} handleClick={this.handleClick} />)}
         </Row>
         <Board />
       </div>

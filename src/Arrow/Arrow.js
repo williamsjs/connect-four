@@ -5,8 +5,9 @@ import './Arrow.css';
 
 const Arrow = (props) => {
 
-  function sendKey() {
-    return props.handleClick(props.val);
+  function sendKey(e) {
+    console.log(e.target);
+    return props.handleClick(props.rowIndex);
   }
 
   return <FaArrowCircleDown className="arrow" onClick={sendKey}/>;
