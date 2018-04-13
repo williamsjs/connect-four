@@ -9,7 +9,22 @@ import './Container.css';
 class Container extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      board: this.createBoard()
+    }
+
+    console.log(this.state.board);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  createBoard() {
+    const board = [];
+    
+    Array(6).fill([]).map(() => {
+      board.push(Array(7).fill('O'));
+    });
+
+    return board;
   }
 
   handleClick(rowIndex) {
