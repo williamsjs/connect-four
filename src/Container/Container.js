@@ -1,12 +1,11 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React, {Component} from 'react';
 
 import Board from '../Board/Board';
 import Arrow from '../Arrow/Arrow';
 import Row from '../Shared/Row/Row';
 import './Container.css';
 
-class Container extends React.Component {
+class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
