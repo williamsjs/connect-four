@@ -10,10 +10,12 @@ class Container extends Component {
     super(props);
     this.state = {
       board: this.createBoard(),
-      playerOneTurn: true
+      playerOneTurn: true,
+      lastColClicked: null
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.updateBoard = this.updateBoard.bind(this);
   }
 
   createBoard() {
@@ -23,8 +25,8 @@ class Container extends Component {
   updateBoard(prevState, colIndex) {
     const board = prevState.board.slice();
     const row = board.slice().reverse().filter(row => row[colIndex] === 'O')[0];
-    const position = board.indexOf(row);
-    board[position][colIndex] = 'X';
+    const rowIndex = board.indexOf(row);
+    board[rowIndex][colIndex] = 'X';
     return board;
   }
 
@@ -33,19 +35,19 @@ class Container extends Component {
       const board = this.updateBoard(prevState, colIndex);
       return {
         board,
-        playerOneTurn: !this.state.playerOneTurn
+        playerOneTurn: !this.state.playerOneTurn,
+        lastColClicked: colIndex
       }
     });
-    console.log(this.state.board);
   }
 
   render() {
     return (
       <div className="container">
         <Row style={{height: '20px', marginBottom: '40px'}}>
-          {Array(7).fill().map((_, i) => <Arrow key={i+1} colIndex={i} handleClick={this.handleClick} />)}
+          {Array(7).fill().map((_, i) => <Arrow key={i} colIndex={i} handleClick={this.handleClick} />)}
         </Row>
-        <Board />
+        <Board {...this.state} />
       </div>
     );
   }

@@ -1,32 +1,49 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Space from './Space/Space';
 import Row from '../Shared/Row/Row';
 import './Board.css';
 
-const Board = () => {
+class Board extends Component {
+  constructor(props) {
+    super(props);
 
-  const rows = (_, i) => (
-    <Row key={i+1} >
-      {rowOutput(spaces, 7)}
-    </Row>
-  );
+    this.rows = this.rows.bind(this);
+    this.spaces = this.spaces.bind(this);
+    this.rowOutput = this.rowOutput.bind(this);
+  }
 
-  const spaces = (_, i) => (
-    <Space key={i+1} />
-  );
+  componentDidUpdate() {
+    console.log(this.props.lastColClicked);
+  }
 
-  const rowOutput = (row, num) => (
-    Array(num).fill().map(row)
-  );
+  rows(_, i) {
+    return (
+      <Row key={i}>
+        {this.rowOutput(this.spaces(i), 7)}
+      </Row>
+    );
+  }
 
-  return (
-    <div className="board-holder">
-      <div className="board">
-        {rowOutput(rows, 6)}
+  spaces(rowIndex) {
+    return (_, i) => {
+      return <Space key={i} columnIndex={i} rowIndex={rowIndex} />;
+    };
+  }
+
+  rowOutput(row, num) {
+    return Array(num).fill().map(row)
+  }
+
+  render() {
+    return (
+      <div className="board-holder">
+        <div className="board">
+          {this.rowOutput(this.rows, 6)}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Board;
