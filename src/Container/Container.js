@@ -21,11 +21,23 @@ class Container extends React.Component {
     return Array(6).fill().map(arr => Array(7).fill('O'));
   }
 
+  updateBoard(prevState, colIndex) {
+    const board = prevState.board.slice();
+    const row = board.slice().reverse().filter(row => row[colIndex] === 'O')[0];
+    const position = board.indexOf(row);
+    board[position][colIndex] = 'X';
+    return board;
+  }
+
   handleClick(colIndex) {
     this.setState(prevState => {
-      const board = prevState.board.slice(0);
-      // board[]
+      const board = this.updateBoard(prevState, colIndex);
+      return {
+        board,
+        playerOneTurn: !this.state.playerOneTurn
+      }
     });
+    console.log(this.state.board);
   }
 
   render() {
