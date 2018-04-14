@@ -10,7 +10,8 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      board: this.createBoard()
+      board: this.createBoard(),
+      playerOneTurn: true
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -20,15 +21,18 @@ class Container extends React.Component {
     return Array(6).fill().map(arr => Array(7).fill('O'));
   }
 
-  handleClick(rowIndex) {
-    console.log(rowIndex);
+  handleClick(colIndex) {
+    this.setState(prevState => {
+      const board = prevState.board.slice(0);
+      // board[]
+    });
   }
 
   render() {
     return (
       <div className="container">
         <Row style={{height: '20px', marginBottom: '40px'}}>
-          {Array(7).fill().map((_, i) => <Arrow key={i+1} rowIndex={i} handleClick={this.handleClick} />)}
+          {Array(7).fill().map((_, i) => <Arrow key={i+1} colIndex={i} handleClick={this.handleClick} />)}
         </Row>
         <Board />
       </div>

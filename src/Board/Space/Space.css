@@ -4,4 +4,10 @@
   border-radius: 50%;
   width: 9%;
   margin: 1% 2%;
+  position: relative;
+}
+
+.chip {
+  display: none;
+  position: absolute;
 }

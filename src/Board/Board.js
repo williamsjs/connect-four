@@ -17,17 +17,12 @@ const Board = () => {
     <Space key={i+1} />
   );
 
-  const arrowRow = (_, i) => (
-    <Arrow key={i+1} />
-  );
-
   const rowOutput = (row, num) => (
     Array(num).fill().map(row)
   );
 
   return (
     <div className="board-holder">
-      {/* <Row>{rowOutput(arrowRow, 7)}</Row> */}
       <div className="board">
         {rowOutput(rows, 6)}
       </div>
