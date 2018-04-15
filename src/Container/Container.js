@@ -13,7 +13,7 @@ class Container extends Component {
       board: this.createBoard(),
       playerOneTurn: true,
       lastColClicked: null,
-      winner: null
+      gameOver: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -77,18 +77,11 @@ class Container extends Component {
 
       const gameOver = this.checkScore(board, prevState.playerOneTurn);
 
-      if (gameOver) {
-        return {
-          board: this.createBoard(),
-          playerOneTurn: true,
-          lastColClicked: null
-        }
-      } else {
-        return {
-          board,
-          playerOneTurn: !this.state.playerOneTurn,
-          lastColClicked: colIndex
-        }
+      return {
+        board,
+        playerOneTurn: !this.state.playerOneTurn,
+        lastColClicked: colIndex,
+        gameOver
       }
     });
   }
