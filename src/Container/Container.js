@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import Header from '../Header/Header';
 import Board from '../Board/Board';
 import Arrow from '../Arrow/Arrow';
 import Row from '../Shared/Row/Row';
@@ -44,11 +45,14 @@ class Container extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Row style={{height: '20px', marginBottom: '40px'}}>
-          {Array(7).fill().map((_, i) => <Arrow key={i} colIndex={i} handleClick={this.handleClick} />)}
-        </Row>
-        <Board {...this.state} />
+      <div>
+        <Header />
+        <div className="container">
+          <Row style={{height: '20px', marginBottom: '40px'}}>
+            {Array(7).fill().map((_, i) => <Arrow key={i} colIndex={i} handleClick={this.handleClick} />)}
+          </Row>
+          <Board {...this.state} />
+        </div>
       </div>
     );
   }

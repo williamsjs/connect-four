@@ -2,8 +2,22 @@
   color: #FFF;
   font-family: 'Francois One', sans-serif;
   text-shadow: 3px 3px 3px #0077BE;
+  display: flex;
+  justify-content: space-around;
 }
 
 .title {
-  margin: .2em 0 0 3em;
+  margin: .2em auto auto 3em;
+}
+
+.header p {
+  text-align: right;
+  animation: slideleft .5s linear;
+  transform: translate(-100px);
+  width: 50%;
+}
+
+@keyframes slideleft {
+  from { transform: translate(500px);}
+  to { transform: translate(-100px);}
 }
