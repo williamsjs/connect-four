@@ -1,45 +1,36 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import Space from './Space/Space';
 import Row from '../Shared/Row/Row';
 import './Board.css';
 
-class Board extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { lastColClicked: null };
-    this.rows = this.rows.bind(this);
-    this.spaces = this.spaces.bind(this);
-    this.rowOutput = this.rowOutput.bind(this);
-  }
+const Board  = ({board}) => {
 
-  rows(_, i) {
+  const rows = (_, i) => {
     return (
       <Row key={i}>
-        {this.rowOutput(this.spaces(i), 7)}
+        {rowOutput(spaces(i), 7)}
       </Row>
     );
   }
 
-  spaces(rowIndex) {
+  const spaces = (rowIndex) => {
     return (_, i) => {
-      return <Space key={i} player={this.props.board[rowIndex][i]} />;
+      return <Space key={i} player={board[rowIndex][i]} />;
     };
   }
 
-  rowOutput(row, num) {
+  const rowOutput = (row, num) => {
     return Array(num).fill().map(row)
   }
 
-  render() {
-    return (
-      <div className="board-holder">
-        <div className="board">
-          {this.rowOutput(this.rows, 6)}
-        </div>
+  return (
+    <div className="board-holder">
+      <div className="board">
+        {rowOutput(rows, 6)}
       </div>
-    )
-  }
+    </div>
+  );
 }
 
 export default Board;
