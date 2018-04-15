@@ -10,11 +10,16 @@
   margin: .2em auto auto 3em;
 }
 
-.header p {
+.player-change {
+  font-size: 20px;
   text-align: right;
   animation: slideleft .5s linear;
   transform: translate(-100px);
   width: 50%;
+}
+
+.hide-player {
+  display: none;
 }
 
 @keyframes slideleft {

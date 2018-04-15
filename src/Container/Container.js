@@ -46,7 +46,7 @@ class Container extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header playerOneTurn={this.state.playerOneTurn} />
         <div className="container">
           <Row style={{height: '20px', marginBottom: '40px'}}>
             {Array(7).fill().map((_, i) => <Arrow key={i} colIndex={i} handleClick={this.handleClick} />)}
