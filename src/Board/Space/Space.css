@@ -9,6 +9,7 @@
 
 .chip {
   z-index: 1;
+  border-radius: 50%;
   display: none;
   height: 70px;
   width: 100%;

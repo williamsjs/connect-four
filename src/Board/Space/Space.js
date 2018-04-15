@@ -13,7 +13,6 @@ const Space = (props) => {
 
   return (
     <div className="space">
-    {props.player}
       <div className="chip" style={style} ></div>
     </div>
   );
