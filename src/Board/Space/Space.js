@@ -8,7 +8,7 @@ const Space = (props) => {
   if (props.player !== null) {
     style.background = props.player === 'playerone' ? 'red' : 'black';
     style.display = 'block';
-    console.log(style);
+    style.animation = 'drop 1s linear';
   }
 
   return (

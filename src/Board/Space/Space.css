@@ -13,5 +13,12 @@
   display: none;
   height: 70px;
   width: 100%;
+  bottom: 0;
+  left: 0;
   position: absolute;
+}
+
+@keyframes drop {
+  0% { margin-bottom: 800px; }
+  100% { margin-bottom: 0px; }
 }
