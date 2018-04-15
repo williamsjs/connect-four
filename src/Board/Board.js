@@ -4,7 +4,7 @@ import Space from './Space/Space';
 import Row from '../Shared/Row/Row';
 import './Board.css';
 
-const Board  = ({board}) => {
+const Board  = ({board, gameOver}) => {
 
   const rows = (_, i) => {
     return (
