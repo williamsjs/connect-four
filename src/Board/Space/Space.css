@@ -8,6 +8,9 @@
 }
 
 .chip {
+  z-index: 1;
   display: none;
+  height: 70px;
+  width: 100%;
   position: absolute;
 }

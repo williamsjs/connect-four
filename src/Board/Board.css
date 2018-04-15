@@ -6,5 +6,6 @@
 }
 
 .board {
+  z-index: 2;
   background: #DFC12A;
 }

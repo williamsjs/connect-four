@@ -19,14 +19,14 @@ class Container extends Component {
   }
 
   createBoard() {
-    return Array(6).fill().map(arr => Array(7).fill('O'));
+    return Array(6).fill().map(arr => Array(7).fill(null));
   }
 
   updateBoard(prevState, colIndex) {
     const board = prevState.board.slice();
-    const row = board.slice().reverse().filter(row => row[colIndex] === 'O')[0];
+    const row = board.slice().reverse().filter(row => row[colIndex] === null)[0];
     const rowIndex = board.indexOf(row);
-    board[rowIndex][colIndex] = 'X';
+    board[rowIndex][colIndex] = prevState.playerOneTurn === true ? 'playerone' : 'playertwo';
     return board;
   }
 
@@ -39,6 +39,7 @@ class Container extends Component {
         lastColClicked: colIndex
       }
     });
+    console.log(this.state.board);
   }
 
   render() {

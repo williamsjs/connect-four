@@ -7,14 +7,10 @@ import './Board.css';
 class Board extends Component {
   constructor(props) {
     super(props);
-
+    this.state = { lastColClicked: null };
     this.rows = this.rows.bind(this);
     this.spaces = this.spaces.bind(this);
     this.rowOutput = this.rowOutput.bind(this);
-  }
-
-  componentDidUpdate() {
-    console.log(this.props.lastColClicked);
   }
 
   rows(_, i) {
@@ -27,7 +23,7 @@ class Board extends Component {
 
   spaces(rowIndex) {
     return (_, i) => {
-      return <Space key={i} columnIndex={i} rowIndex={rowIndex} />;
+      return <Space key={i} player={this.props.board[rowIndex][i]} />;
     };
   }
 
