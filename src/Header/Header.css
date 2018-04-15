@@ -1,17 +1,28 @@
 .header {
+  font-family: 'Gugi', cursive;
   color: #FFF;
-  font-family: 'Francois One', sans-serif;
   text-shadow: 3px 3px 3px #0077BE;
   display: flex;
   justify-content: space-around;
+  margin: .2em auto auto 3em;
+  font-size: 2em;
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    font-size: 1.3em;
+    margin-left: 0;
+  }
 }
 
 .title {
-  margin: .2em auto auto 3em;
+  font-size: 1em;
 }
 
 .player-change {
-  font-size: 20px;
+  font-size: 1em;
+  color: #DFC12A;
+  font-family: 'Francois One', sans-serif;
   text-align: right;
   animation: slideleft .5s linear;
   transform: translate(-100px);

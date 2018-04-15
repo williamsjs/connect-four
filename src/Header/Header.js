@@ -6,8 +6,8 @@ const Header = (props) => {
   return(
     <div className="header">
       <h1 className="title">Connect Four</h1>
-      <p className={props.playerOneTurn ? 'player-change' : 'hide-player'} >Player One Go!!!</p>
-      <p className={!props.playerOneTurn ? 'player-change' : 'hide-player'}>Player Two Go!!!</p>
+      <h1 className={props.playerOneTurn ? 'player-change' : 'hide-player'} >Player One Go!!!</h1>
+      <h1 className={!props.playerOneTurn ? 'player-change' : 'hide-player'}>Player Two Go!!!</h1>
     </div>
   );
 }
