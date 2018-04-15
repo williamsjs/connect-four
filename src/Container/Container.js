@@ -30,7 +30,6 @@ class Container extends Component {
     const row = board.slice().reverse().filter(row => row[colIndex] === null)[0];
     const rowIndex = board.indexOf(row);
     board[rowIndex][colIndex] = prevState.playerOneTurn === true ? 'playerone' : 'playertwo';
-    this.checkScore(board, prevState.playerOneTurn);
     return board;
   }
 
@@ -40,7 +39,7 @@ class Container extends Component {
     for (let c=0; c < (board[0].length - 3); c++) {
       for (let r=0; r < board.length; r++) {
         if (board[r][c] === player && board[r][c+1] === player && board[r][c+2] === player && board[r][c+3] === player) {
-          console.log('game over man:', player, 'wins');
+          return true;
         }
       }
     }
@@ -48,7 +47,7 @@ class Container extends Component {
     for (let c=0; c < board[0].length; c++) {
       for (let r=0; r < (board.length - 3); r++) {
         if (board[r][c] === player && board[r+1][c] === player && board[r+2][c] === player && board[r+3][c] === player) {
-          console.log('game over man:', player, 'wins');
+          return true;
         }
       }
     }  
@@ -56,7 +55,7 @@ class Container extends Component {
     for (let c=0; c < (board[0].length - 3); c++) {
       for (let r=0; r < (board.length - 3); r++) { 
         if (board[r][c] === player && board[r+1][c+1] === player && board[r+2][c+2] === player && board[r+3][c+3] === player) {
-          console.log('game over man:', player, 'wins');
+          return true;
         }
       }
     }
@@ -64,19 +63,32 @@ class Container extends Component {
     for (let c=0; c < (board[0].length - 3); c++) {
       for (let r=3; r < board.length; r++) {
         if (board[r][c] === player && board[r-1][c+1] === player && board[r-2][c+2] === player && board[r-3][c+3] === player) {
-          console.log('game over man:', player, 'wins');
+          return true;
         }
       }
     }  
+
+    return false;
   }
 
   handleClick(colIndex) {
     this.setState(prevState => {
       const board = this.updateBoard(prevState, colIndex);
-      return {
-        board,
-        playerOneTurn: !this.state.playerOneTurn,
-        lastColClicked: colIndex
+
+      const gameOver = this.checkScore(board, prevState.playerOneTurn);
+
+      if (gameOver) {
+        return {
+          board: this.createBoard(),
+          playerOneTurn: true,
+          lastColClicked: null
+        }
+      } else {
+        return {
+          board,
+          playerOneTurn: !this.state.playerOneTurn,
+          lastColClicked: colIndex
+        }
       }
     });
   }
