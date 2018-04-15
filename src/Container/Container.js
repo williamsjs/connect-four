@@ -54,8 +54,8 @@ class Container extends Component {
     }  
 
     for (let c=0; c < (board[0].length - 3); c++) {
-      for (let r=0; r < (board.length - 3); r++) {
-        if (board[r][c] === player && board[r+1][c+1] === player && board[r+2][c+2] === player && board[r+2][c+3] === player) {
+      for (let r=0; r < (board.length - 3); r++) { 
+        if (board[r][c] === player && board[r+1][c+1] === player && board[r+2][c+2] === player && board[r+3][c+3] === player) {
           console.log('game over man:', player, 'wins');
         }
       }
