@@ -7,10 +7,11 @@
 .lever-text {
   color: white;
   position: absolute;
-  left: -105px;
+  transform: translate(-80px);
   bottom: 0;
   font-family: 'Francois One', sans-serif;
   display: inline-block;
+  animation: bounceright 2s infinite;
 }
 
 .lever {
@@ -19,3 +20,10 @@
   height: 16px;
   background: #0077BE;
 }
+
+@keyframes bounceright {
+  0% { transform: translate(-80px);}
+  50% { transform: translate(-60px);}
+  100% { transform: translate(-80px);}
+}
+
