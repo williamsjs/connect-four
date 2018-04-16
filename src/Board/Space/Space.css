@@ -24,6 +24,11 @@
 }
 
 @keyframes drop {
-  0% { margin-bottom: 800px; }
-  100% { margin-bottom: 0px; }
+  0% { transform: translateY(-800px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes clearboard {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(700px); }
 }

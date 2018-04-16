@@ -4,9 +4,15 @@ import './Space.css';
 
 const Space = ({player, gameOver}) => {
 
-  const background = () => player === 'playerone' ? 
-                            {background: 'red'} : 
-                            {background: 'black'};
+  const background = () => {
+    const style = {}
+    style.background = player === 'playerone' ? 'red' : 'black';
+
+    if (gameOver) {
+      style.animation = 'clearboard 1.5s linear';
+    }
+    return style;
+  }
 
   return (
     <div className="space">
