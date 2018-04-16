@@ -3,13 +3,13 @@ import React from 'react';
 import FaArrowCircleDown from 'react-icons/lib/fa/arrow-circle-down'
 import './Arrow.css';
 
-const Arrow = (props) => {
+const Arrow = ({colIndex, handleClick, gameOver}) => {
 
   function sendKey() {
-    return props.handleClick(props.colIndex);
+    return handleClick(colIndex);
   }
 
-  return <FaArrowCircleDown className="arrow" onClick={sendKey}/>;
+  return !gameOver ? <FaArrowCircleDown className="arrow" onClick={sendKey}/> : null;
 }
 
 export default Arrow;

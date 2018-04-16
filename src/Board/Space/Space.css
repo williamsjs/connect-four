@@ -18,6 +18,11 @@
   position: absolute;
 }
 
+.player-drop {
+  display: block;
+  animation: drop 1s linear;
+}
+
 @keyframes drop {
   0% { margin-bottom: 800px; }
   100% { margin-bottom: 0px; }

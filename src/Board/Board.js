@@ -16,7 +16,7 @@ const Board  = ({board, gameOver}) => {
 
   const spaces = (rowIndex) => {
     return (_, i) => {
-      return <Space key={i} player={board[rowIndex][i]} />;
+      return <Space key={i} player={board[rowIndex][i]} gameOver={gameOver} />;
     };
   }
 

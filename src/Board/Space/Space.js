@@ -2,18 +2,17 @@ import React from 'react';
 
 import './Space.css';
 
-const Space = (props) => {
-  const style = {};
+const Space = ({player, gameOver}) => {
 
-  if (props.player !== null) {
-    style.background = props.player === 'playerone' ? 'red' : 'black';
-    style.display = 'block';
-    style.animation = 'drop 1s linear';
-  }
+  const background = () => player === 'playerone' ? 
+                            {background: 'red'} : 
+                            {background: 'black'};
 
   return (
     <div className="space">
-      <div className="chip" style={style} ></div>
+      { player !== null &&
+        <div className="chip player-drop" style={background()} ></div>
+      }
     </div>
   );
 }
