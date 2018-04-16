@@ -1,0 +1,21 @@
+.lever-container {
+  position: absolute;
+  left: -75px;
+  bottom: 71px;
+}
+
+.lever-text {
+  color: white;
+  position: absolute;
+  left: -105px;
+  bottom: 0;
+  font-family: 'Francois One', sans-serif;
+  display: inline-block;
+}
+
+.lever {
+  display: inline-block;
+  width: 50px;
+  height: 16px;
+  background: #0077BE;
+}

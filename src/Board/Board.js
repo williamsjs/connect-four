@@ -2,6 +2,7 @@ import React from 'react';
 
 import Space from './Space/Space';
 import Row from '../Shared/Row/Row';
+import Reset from './Reset/Reset';
 import './Board.css';
 
 const Board  = ({board, gameOver}) => {
@@ -29,6 +30,7 @@ const Board  = ({board, gameOver}) => {
       <div className="board">
         {rowOutput(rows, 6)}
       </div>
+      <Reset />
     </div>
   );
 }
