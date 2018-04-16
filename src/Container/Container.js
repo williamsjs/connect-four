@@ -19,6 +19,7 @@ class Container extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.updateBoard = this.updateBoard.bind(this);
     this.checkScore = this.checkScore.bind(this);
+    this.arrows = this.arrows.bind(this);
   }
 
   createBoard() {
@@ -86,13 +87,27 @@ class Container extends Component {
     });
   }
 
+  arrows() {
+    return Array(7).fill().map((_, i) => {
+      const colFull = !this.state.board.map((row) => row[i]).some(item => item === null);
+
+      return <Arrow 
+              key={i} 
+              colIndex={i} 
+              handleClick={this.handleClick} 
+              gameOver={this.state.gameOver}
+              colFull={colFull}
+             />
+    })
+  }
+
   render() {
     return (
       <div>
         <Header playerOneTurn={this.state.playerOneTurn} gameOver={this.state.gameOver} />
         <div className="container">
           <Row style={{height: '20px', marginBottom: '40px'}}>
-            {Array(7).fill().map((_, i) => <Arrow key={i} colIndex={i} handleClick={this.handleClick} gameOver={this.state.gameOver} />)}
+            {this.arrows()}
           </Row>
           <Board {...this.state} />
         </div>
