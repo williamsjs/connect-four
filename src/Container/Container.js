@@ -43,7 +43,7 @@ class Container extends Component {
     for (let c=0; c < (board[0].length - 3); c++) {
       for (let r=0; r < board.length; r++) {
         if (board[r][c] === player && board[r][c+1] === player && board[r][c+2] === player && board[r][c+3] === player) {
-          return true;
+          return `${player} wins Across!!!`;
         }
       }
     }
@@ -51,7 +51,7 @@ class Container extends Component {
     for (let c=0; c < board[0].length; c++) {
       for (let r=0; r < (board.length - 3); r++) {
         if (board[r][c] === player && board[r+1][c] === player && board[r+2][c] === player && board[r+3][c] === player) {
-          return true;
+          return `${player} wins Vertically!!!`;
         }
       }
     }  
@@ -59,7 +59,7 @@ class Container extends Component {
     for (let c=0; c < (board[0].length - 3); c++) {
       for (let r=0; r < (board.length - 3); r++) { 
         if (board[r][c] === player && board[r+1][c+1] === player && board[r+2][c+2] === player && board[r+3][c+3] === player) {
-          return true;
+          return `${player} wins Diagonally!!!`;
         }
       }
     }
@@ -67,7 +67,7 @@ class Container extends Component {
     for (let c=0; c < (board[0].length - 3); c++) {
       for (let r=3; r < board.length; r++) {
         if (board[r][c] === player && board[r-1][c+1] === player && board[r-2][c+2] === player && board[r-3][c+3] === player) {
-          return true;
+          return `${player} wins Diagonally!!!`;
         }
       }
     }  
