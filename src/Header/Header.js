@@ -1,8 +1,9 @@
 import React from 'react';
 
+import Reset from '../Shared/Reset/Reset';
 import './Header.css';
 
-const Header = ({playerOneTurn, gameOver}) => {
+const Header = ({playerOneTurn, gameOver, handleReset}) => {
   return(
     <div>
       {!gameOver ? (
@@ -14,6 +15,7 @@ const Header = ({playerOneTurn, gameOver}) => {
       ) : (
         <h1>Game Over</h1>
       )}
+      <Reset handleReset={handleReset} lever={false} />
     </div>
   );
 }

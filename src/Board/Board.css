@@ -10,3 +10,10 @@
   z-index: 2;
   background: #DFC12A;
 }
+
+@media screen and (max-width: 600px) {
+  .container .board-holder {
+    border-left: 15px solid #0077BE;
+    border-right: 15px solid #0077BE;
+  }
+}

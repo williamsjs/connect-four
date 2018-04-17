@@ -1,3 +1,7 @@
+.reset-container {
+  text-align: center;
+}
+
 .lever-container {
   position: absolute;
   left: -75px;
@@ -27,6 +31,22 @@
   margin-left: 10px;
 }
 
+.reset-button {
+  display: none;
+  margin: auto;
+  width: 60px;
+  height: 25px;
+  border-radius: 5px;
+  color: white;
+  background: #0077BE;
+  padding: auto 5px;
+}
+
+.refresh-icon {
+  padding-right: 5px;
+  font-size: 15px;
+}
+
 @keyframes bounceright {
   0% { transform: translate(-80px);}
   50% { transform: translate(-60px);}
@@ -36,6 +56,10 @@
 @media screen and (max-width: 768px) {
   .lever-container {
     display: none;
+  }
+
+  .reset-button {
+    display: inline-block;
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Space from './Space/Space';
 import Row from '../Shared/Row/Row';
-import Reset from './Reset/Reset';
+import Reset from '../Shared/Reset/Reset';
 import './Board.css';
 
 const Board  = ({board, reset, handleReset}) => {
