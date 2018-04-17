@@ -30,7 +30,7 @@ const Board  = ({board, reset, handleReset}) => {
       <div className="board">
         {rowOutput(rows, 6)}
       </div>
-      <Reset handleReset={handleReset} />
+      <Reset handleReset={handleReset} lever={true} />
     </div>
   );
 }

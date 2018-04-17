@@ -22,6 +22,7 @@ class Container extends Component {
     this.checkScore = this.checkScore.bind(this);
     this.arrows = this.arrows.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   createBoard() {
@@ -104,23 +105,25 @@ class Container extends Component {
     })
   }
 
+  resetState() {
+    this.setState({
+      board: this.createBoard(),
+      playerOneTurn: true,
+      lastColClicked: null,
+      gameOver: false,
+      reset: false
+    });
+  }
+
   handleReset() {
     this.setState({reset: true});
-    setTimeout(() => {
-      this.setState({
-        board: this.createBoard(),
-        playerOneTurn: true,
-        lastColClicked: null,
-        gameOver: false,
-        reset: false
-      })
-    }, 1400);
+    setTimeout(this.resetState, 1400);
   }
 
   render() {
     return (
       <div>
-        <Header playerOneTurn={this.state.playerOneTurn} gameOver={this.state.gameOver} />
+        <Header playerOneTurn={this.state.playerOneTurn} gameOver={this.state.gameOver} handleReset={this.handleReset}/>
         <div className="container">
           <Row style={{height: '20px', marginBottom: '40px'}}>
             {this.arrows()}
