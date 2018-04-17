@@ -5,7 +5,7 @@ import Row from '../Shared/Row/Row';
 import Reset from './Reset/Reset';
 import './Board.css';
 
-const Board  = ({board, gameOver}) => {
+const Board  = ({board, reset, handleReset}) => {
 
   const rows = (_, i) => {
     return (
@@ -17,7 +17,7 @@ const Board  = ({board, gameOver}) => {
 
   const spaces = (rowIndex) => {
     return (_, i) => {
-      return <Space key={i} player={board[rowIndex][i]} gameOver={gameOver} />;
+      return <Space key={i} player={board[rowIndex][i]} reset={reset} />;
     };
   }
 
@@ -30,7 +30,7 @@ const Board  = ({board, gameOver}) => {
       <div className="board">
         {rowOutput(rows, 6)}
       </div>
-      <Reset />
+      <Reset handleReset={handleReset} />
     </div>
   );
 }

@@ -13,13 +13,15 @@ class Container extends Component {
       board: this.createBoard(),
       playerOneTurn: true,
       lastColClicked: null,
-      gameOver: false
+      gameOver: false,
+      reset: false
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.updateBoard = this.updateBoard.bind(this);
     this.checkScore = this.checkScore.bind(this);
     this.arrows = this.arrows.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   createBoard() {
@@ -97,8 +99,22 @@ class Container extends Component {
               handleClick={this.handleClick} 
               gameOver={this.state.gameOver}
               colFull={colFull}
+              reset={this.state.reset}
              />
     })
+  }
+
+  handleReset() {
+    this.setState({reset: true});
+    setTimeout(() => {
+      this.setState({
+        board: this.createBoard(),
+        playerOneTurn: true,
+        lastColClicked: null,
+        gameOver: false,
+        reset: false
+      })
+    }, 1400);
   }
 
   render() {
@@ -109,7 +125,7 @@ class Container extends Component {
           <Row style={{height: '20px', marginBottom: '40px'}}>
             {this.arrows()}
           </Row>
-          <Board {...this.state} />
+          <Board {...this.state} handleReset={this.handleReset} />
         </div>
       </div>
     );

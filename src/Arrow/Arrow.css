@@ -16,3 +16,15 @@
   50% {margin-top: 20px;}
   100% { margin-top: 0px; }
 }
+
+@media screen and (min-width: 1500px) {
+  .arrow {
+    width: 9.5%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .arrow {
+    width: 8.7%;
+  }
+}

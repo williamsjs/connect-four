@@ -2,13 +2,14 @@ import React from 'react';
 
 import './Space.css';
 
-const Space = ({player, gameOver}) => {
+const Space = ({player, reset}) => {
 
   const background = () => {
     const style = {}
     style.background = player === 'playerone' ? 'red' : 'black';
 
-    if (gameOver) {
+    console.log(reset);
+    if (reset) {
       style.animation = 'clearboard 1.5s linear';
     }
     return style;
