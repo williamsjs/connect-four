@@ -1,5 +1,5 @@
 {
-  "name": "ConnectFour",
+  "name": "connect-four",
   "version": "1.0.0",
   "description": "Play connect four online",
   "main": "index.js",
@@ -8,7 +8,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode development",
-    "build:prod": "webpack -p"
+    "build:prod": "webpack -p",
+    "deploy": "webpack -p && firebase deploy"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
