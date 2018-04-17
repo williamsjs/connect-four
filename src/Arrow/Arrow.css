@@ -2,19 +2,12 @@
   display: inline-block;
   width: 9%;
   margin: 1% 1.6%;
-  color: #FFF;
+  color: #3D9970;
   font-size: 30px;
-  animation: bounce 1.3s ease-in-out infinite;
 }
 
 .arrow:hover {
   cursor: pointer;
-}
-
-@keyframes bounce {
-  0% { margin-top: 0px}
-  50% {margin-top: 20px;}
-  100% { margin-top: 0px; }
 }
 
 @media screen and (min-width: 1500px) {
