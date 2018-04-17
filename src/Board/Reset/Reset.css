@@ -21,6 +21,12 @@
   background: #0077BE;
 }
 
+.arrow-bounce {
+  font-size: 30px;
+  vertical-align: bottom;
+  margin-left: 10px;
+}
+
 @keyframes bounceright {
   0% { transform: translate(-80px);}
   50% { transform: translate(-60px);}

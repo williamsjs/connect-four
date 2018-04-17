@@ -7,7 +7,7 @@ const Reset = ({handleReset}) => {
     <div className="lever-container">
       <div className="lever-text">
         Restart
-        <TiArrowRightOutline style={{fontSize: '30px', verticalAlign: 'bottom', marginLeft: '10px'}}/>
+        <TiArrowRightOutline className="arrow-bounce"/>
       </div>    
       <div className="lever" onClick={handleReset}></div>
     </div>
