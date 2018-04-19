@@ -7,6 +7,12 @@
   font-size: 2em;
 }
 
+.game-over {
+  text-align: center;
+  transform: translateY(0px);
+  animation: dropfromtop 1s linear;
+}
+
 .black {
   color: #000;
 }
@@ -36,6 +42,11 @@
 @keyframes slideleft {
   from { transform: translate(500px);}
   to { transform: translate(-100px);}
+}
+
+@keyframes dropfromtop {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(0px); }
 }
 
 @media screen and (max-width: 768px) and (min-width: 200px) {
