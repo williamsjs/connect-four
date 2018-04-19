@@ -8,8 +8,10 @@
 }
 
 .game-over {
+  font-family: 'Gugi', cursive;
+  color: #3D9970;
+  text-transform: uppercase;
   text-align: center;
-  transform: translateY(0px);
   animation: dropfromtop 1s linear;
 }
 
