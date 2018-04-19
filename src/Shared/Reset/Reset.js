@@ -9,7 +9,7 @@ const Reset = ({handleReset, lever}) => {
       {lever ? (
         <div className="lever-container">
           <div className="lever-text">
-            Restart
+            Reset
             <TiArrowRightOutline className="arrow-bounce"/>
           </div>    
           <div className="lever" onClick={handleReset}></div>
