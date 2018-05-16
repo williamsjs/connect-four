@@ -25,6 +25,10 @@
   background: #0077BE;
 }
 
+.lever:hover {
+  background: red;
+}
+
 .arrow-bounce {
   font-size: 30px;
   vertical-align: bottom;

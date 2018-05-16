@@ -7,6 +7,10 @@
 }
 
 .arrow:hover {
+  color: darkgreen;
+}
+
+.arrow:hover {
   cursor: pointer;
 }
 
